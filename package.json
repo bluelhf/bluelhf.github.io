@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run minify; node server.js",
     "build": "npm run minify",
-    "minify": "html-minifier --collapse-boolean-attributes --collapse-inline-tag-whitespace --collapse-whitespace --continue-on-parse-error --decode-entities --no-html5 --minify-css true --minify-urls true --remove-attribute-quotes --remove-comments --remove-empty-attributes --remove-empty-elements --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace --use-short-doctype -o dist/index.html src/index.html"
+    "minify": "html-minifier --collapse-boolean-attributes --collapse-inline-tag-whitespace --collapse-whitespace --continue-on-parse-error --decode-entities --no-html5 --minify-css true --minify-urls true --remove-attribute-quotes --remove-comments --remove-empty-attributes --remove-empty-elements --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace --use-short-doctype -o public/index.html src/index.html"
   },
   "author": "bluelhf",
   "license": "ISC",
