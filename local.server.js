@@ -12,5 +12,6 @@ app.use(shrinkRay({
     }
 }));
 
-app.use(express.static('dist', {etag: false}))
+app.use(express.static('public', {etag: false}))
 app.listen(8080);
+console.log("Now listening on port 8080");
