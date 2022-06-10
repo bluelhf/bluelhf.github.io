@@ -1,3 +1,10 @@
+/* *
+ * This program is meant to be run on Java 8.
+ * The error message that is shown on other
+ * versions of Java is intentional, and is
+ * not part of the challenge.
+ * */
+
 import java.lang.reflect.*;
 import java.util.*;
 import java.io.*;
