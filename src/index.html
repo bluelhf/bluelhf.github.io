@@ -43,7 +43,16 @@
                 grid-template-rows: [header] 10% [content] min-content [footer] 1fr;
                 min-height: 100vh;
                 justify-items: stretch;
+            }
 
+            a {
+				text-decoration-color: rgba(1, 1, 1, 0.2);
+                color: inherit;
+                filter: brightness(66.666%);
+            }
+
+            a:visited {
+                text-decoration: none !important;
             }
 
             #header {
@@ -61,8 +70,6 @@
 
                 text-indent: 2em;
             }
-
-
 
             #content:after {
                 display: inline-block;
