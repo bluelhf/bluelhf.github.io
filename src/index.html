@@ -1,115 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ultra-tiny website and portfolio for Ilari Suhonen">
-    <link rel="icon" href="favicon.webp">
-    <title>Ilari S.</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Ultra-tiny website and portfolio for Ilari Suhonen">
+        <link rel="icon" href="favicon.webp">
+        <title>Ilari S.</title>
+    </head>
 
-<body style="min-height: 100%;">
-    <style>
-        body {
-            background-color: rgb(25, 25, 25);
-            color: rgb(228, 224, 221);
-        }
-
-        @media only screen and (prefers-color-scheme: light) {
+    <body style="min-height: 100%;">
+        <style>
             body {
-                background-color: rgb(248, 231, 229);
-                color: rgb(35, 33, 33);
+                background-color: rgb(25, 25, 25);
+                color: rgb(228, 224, 221);
             }
-        }
 
-        #content {
-            font-size: 25px;
-        }
+            @media only screen and (prefers-color-scheme: light) {
+                body {
+                    background-color: rgb(248, 231, 229);
+                    color: rgb(35, 33, 33);
+                }
+            }
 
-        @media only screen and (max-width: 600px) {
             #content {
-                font-size: 5.1vmin;
+                font-size: 25px;
             }
-        }
 
-        body {
-            margin: 0;
-        }
+            @media only screen and (max-width: 600px) {
+                #content {
+                    font-size: 5.1vmin;
+                }
+            }
 
-        #container {
-            display: grid;
-            grid-template-columns: [left] 10% [content] 80% [right] 10%;
-            grid-template-rows: [header] 10vmin [content] 70%;
-            min-height: 100vh;
-            justify-items: stretch;
+            body {
+                margin: 0;
+            }
 
-            margin-top: 1em;
-        }
+            #container {
+                display: grid;
+                grid-template-columns: [left] 10% [content] 80% [right] 10%;
+                grid-template-rows: [header] 10% [content] min-content [footer] 1fr;
+                min-height: 100vh;
+                justify-items: stretch;
 
-        #header {
-            grid-column: content / content;
-            grid-row: 1 / 1;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-        }
+            }
 
-        #content {
-            grid-column: content / content;
-            grid-row: 2 / 2;
-            text-align: justify;
+            #header {
+                grid-column: content / content;
+                grid-row: 1 / 1;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+            }
 
-            text-indent: 2em;
-        }
+            #content {
+                grid-column: content / content;
+                grid-row: 2 / 2;
+                text-align: justify;
+
+                text-indent: 2em;
+            }
 
 
 
-        #content:after {
-            display: inline-block;
-            width: 100%;
-        }
+            #content:after {
+                display: inline-block;
+                width: 100%;
+            }
 
-        #header h1 {
-            /* 6 vmin. seems to fit the grid nicely... i wish there was a better way to do this*/
-            font-size: 4vmax;
-            margin-bottom: 0;
-        }
-    </style>
-    <div id="container">
-        <header id="header">
-            <h1>Hi! I'm Ilari.</h1>
-        </header>
-        <div id="content">
-            <p>
-                I'm a 16-year-old programming enthusiast and upper secondary education student living in Finland.
-                I spend most of my free time programming in — and drinking — Java. As I'm sure you've noticed, I've
-                kept this website small. My internet is, to put it gently, !%☠#ing terrible, so large sites often take
-                a frustratingly long amount of time to download. Consider the small file size, then, a courtesy to
-                others with similar or even slower internet.
-            </p>
-            <p>
-                I currently have three computers that I use actively: One, at my mum's, boasts 256 gibibytes of RAM and
-                a Quadro P6000, along with an Intel® Xeon® W-2145 CPU, which clocks in at 3.7 GHz. Needless to say, I'm very
-                lucky to have a setup as powerful as this, and it often comes in handy. The machine runs a dualboot of Pop!_OS
-                and Windows 11 Insider Preview, but I don't use the Windows side practically at all (hence why it's still in
-                the preview version of Windows 11), and I'm not very happy with Pop!_OS. I'm thinking of wiping it clean and
-                installing a systemd-less GNU+Linux distribution like Artix on it at some point.
-            </p>
-            <p>
-                My second computer is a little more modest, with 16 gibibytes of RAM, an NVIDIA® GeForce® RTX 2070, and an Intel®
-                Core™ i7-10700 with a base clock of 2.9 GHz.  This one is special in that it runs a development build of Devuan,
-                specifically Devuan Ceres, along with GNOME 42.2. It doesn't have fancy lights, or ridiculous amounts of RAM, or
-                a high base clock, or an absurd amount of cores, but it's a desktop, it's mine, and I'm proud of it and happy with it.
-            </p>
-            <p>
-                My third computer is a small school laptop, a Dell Latitude 3310. It runs on an Intel® Core™ i3-8145U, with
-                a clock speed of 2.10 GHz. It has 8 gibibytes of RAM, and its GPU is the integrated Intel® UHD Graphics 620.
-                It runs Devuan Chimaera, GNOME, and Pop_Shell for tiling. I rarely use it outside of school, though, and I'll
-                have to return it when I leave anyways.
-            </p>
+            #header h1 {
+                /* 6 vmin. seems to fit the grid nicely... i wish there was a better way to do this*/
+                font-size: 4vmax;
+                margin-bottom: 0;
+            }
+
+            footer {
+                align-self: end;
+                grid-column: content;
+                grid-row: footer;
+                display: flex;
+                justify-content: space-around;
+                padding: 1rem;
+            }
+        </style>
+        <div id="container">
+            <header id="header">
+                <h1>Hi! I'm Ilari.</h1>
+            </header>
+            <div id="content">
+                <p>
+                    I'm a 16-year-old programming enthusiast and upper secondary education student living in Finland.
+                    I spend most of my free time programming in — and drinking — Java. As I'm sure you've noticed, I've
+                    kept this website small. My internet is, to put it gently, !%☠#ing terrible, so large sites often take
+                    a frustratingly long amount of time to download. Consider the small file size, then, a courtesy to
+                    others with similar or even slower internet.
+                </p>
+                <p>
+                    I currently have three computers that I use actively: One, at my mum's, boasts 256 gibibytes of RAM and
+                    a Quadro P6000, along with an Intel® Xeon® W-2145 CPU, which clocks in at 3.7 GHz. Needless to say, I'm very
+                    lucky to have a setup as powerful as this, and it often comes in handy. The machine runs a dualboot of Pop!_OS
+                    and Windows 11 Insider Preview, but I don't use the Windows side practically at all (hence why it's still in
+                    the preview version of Windows 11), and I'm not very happy with Pop!_OS. I'm thinking of wiping it clean and
+                    installing a systemd-less GNU+Linux distribution like Artix on it at some point.
+                </p>
+                <p>
+                    My second computer is a little more modest, with 16 gibibytes of RAM, an NVIDIA® GeForce® RTX 2070, and an Intel®
+                    Core™ i7-10700 with a base clock of 2.9 GHz.  This one is special in that it runs a development build of Devuan,
+                    specifically Devuan Ceres, along with GNOME 42.2. It doesn't have fancy lights, or ridiculous amounts of RAM, or
+                    a high base clock, or an absurd amount of cores, but it's a desktop, it's mine, and I'm proud of it and happy with it.
+                </p>
+                <p>
+                    My third computer is a small school laptop, a Dell Latitude 3310. It runs on an Intel® Core™ i3-8145U, with
+                    a clock speed of 2.10 GHz. It has 8 gibibytes of RAM, and its GPU is the integrated Intel® UHD Graphics 620.
+                    It runs Devuan Chimaera, GNOME, and Pop_Shell for tiling. I rarely use it outside of school, though, and I'll
+                    have to return it when I leave anyways.
+                </p>
+            </div>
+            <footer>
+                <a rel="me" href="https://mastodon.testausserveri.fi/@ilari">Mastodon</a>
+                <a rel="me" href="https://github.com/bluelhf">GitHub</a>
+                <a rel="me" href="https://www.linkedin.com/in/ilari-suhonen">LinkedIn</a>
+            </footer>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>
