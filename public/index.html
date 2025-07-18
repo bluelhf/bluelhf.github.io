@@ -1,113 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Ultra-tiny website and portfolio for Ilari Suhonen">
-        <link rel="icon" href="favicon.webp">
-        <title>Ilari S.</title>
-    </head>
+<title>Ilari's web site</title>
+<meta charset="utf-8">
+<meta property="og:title" content="Ilari" />
+<meta property="og:type" content="profile" />
+<meta property="og:description" content="My web site :)" />
+<meta property="og:url" content="https://ilari.ri.it" />
+<meta property="profile:first_name" content="Ilari">
+<meta property="profile:last_name" content="Suhonen">
+<meta property="profile:gender" content="male">
+<meta property="profile:username" content="bluelhf">
+<meta property="og:image" content="/assets/hello_kitty_onesie/w_100.webp" />
+<link rel="icon" href="/assets/hello_kitty_onesie.webp" />
+<meta name="description" content="Ilari's web site">
 
-    <body style="min-height: 100%;">
-        <style>
-            body {
-                background-color: rgb(25, 25, 25);
-                color: rgb(228, 224, 221);
-            }
+<!-- we are mobile-optimised :) -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-            @media only screen and (prefers-color-scheme: light) {
-                body {
-                    background-color: rgb(245, 240, 240);
-                    color: rgb(35, 33, 33);
-                }
-            }
+<style>
+@font-face {
+	font-family: "Fira Mono";
+	font-display: swap;
+	src: url("fonts/FiraMono-Regular.woff2") format("woff2");
+}
 
-            #content {
-                font-size: 25px;
-            }
+html {
+	font-family: "Fira Mono", monospace;
+	background-color: #282828;
+	color: #ebdbb2;
+	font-size: 120%;
+}
 
-            @media only screen and (max-width: 600px) {
-                #content {
-                    font-size: 5.1vmin;
-                }
-            }
-		
-            #container {
-                display: grid;
-                grid-template-columns: [left] 10% [content] 80% [right] 10%;
-                grid-template-rows: [header] 10% [content] min-content [footer] 1fr;
-                min-height: 100vh;
-                justify-items: stretch;
-            }
+body {
+	margin: 1rem;
+}
 
-            a {
-		text-decoration-color: rgba(1, 1, 1, 0.2);
-                color: inherit;
-                filter: brightness(66.666%);
-            }
+main {
+	margin: auto;
+	max-width: 1000px;
+}
 
-            a:visited {
-                text-decoration: none !important;
-            }
+.logo {
+	width: 15em;
+	aspect-ratio: 1 / 1;
+	float: right;
+	border-radius: 50%;
+}
 
-            #header {
-                grid-column: content / content;
-                grid-row: 1 / 1;
-                display: flex;
-                justify-content: center;
-                align-items: flex-end;
-            }
+/* mobile */
+@media (width <= 1000px) {
+	html {
+		font-size: 80%;
+	}
 
-            #content {
-                grid-column: content / content;
-                grid-row: 2 / 2;
-                text-align: justify;
+	.logo {
+		float: none;
+		border-radius: 50%;
+	}
 
-                text-indent: 2em;
-            }
+	.logo-container {
+		margin: 2rem 0 2rem 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
 
-            #content:after {
-                display: inline-block;
-                width: 100%;
-            }
+.profile-container {
+	display: flex;
+	align-items: center;
+	font-size: large;
+	gap: .4em;
+}
 
-            #header h1 {
-                /* 6 vmin. seems to fit the grid nicely... i wish there was a better way to do this*/
-                font-size: 4vmax;
-                margin-bottom: 0;
-            }
+.profile {
+	width: 1em;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+}
 
-            footer {
-                align-self: end;
-                grid-column: content;
-                grid-row: footer;
-                display: flex;
-                justify-content: space-around;
-            }
-        </style>
-        <div id="container">
-            <header id="header">
-                <h1>Hi! I'm Ilari.</h1>
-            </header>
-            <div id="content">
-                <p>
-                    I'm a 19-year-old programming enthusiast from Finland. I'm proficient in Java, capable in Rust,
-		            and interested in any and all languages, from C to Clojure to Ruby to Haskell. Alongside technology and IT,
-		            I also enjoy philosophy, mathematics, working out, and playing instruments.
-                </p>
-		        <p>
-		            I was in compulsory military service in 2024–2025 serving in a classified position at the Armoured Brigade. I learnt leadership skills (NCO), improved my mental and physical toughness (incl. SERE) and deepened my understanding of physics and military-grade distributed computing and IT solutions.
-		        </p>
-         <p>
-             I'm starting computer science studies (bachelor's and master's programme) at Aalto University in late 2025.
-         </p>
-            </div>
-            <footer>
-                <a rel="me" href="https://mastodon.testausserveri.fi/@ilari">Mastodon</a>
-                <a rel="me" href="https://github.com/bluelhf">GitHub</a>
-                <a rel="me" href="https://www.linkedin.com/in/ilari-suhonen">LinkedIn</a>
-            </footer>
-        </div>
-    </body>
-</html>
+a {
+	color: #83a598;
+}
+
+a:visited {
+	color: #d3869b;
+}
+
+.inline-code {
+	background-color: #1d2021;
+	border-radius: 5px;
+	padding: 2.5px;
+}
+
+.code-block {
+	display: inline-block;
+	overflow: scroll;
+	width: 100%;
+}
+
+.foldable {
+	display: grid;
+	/* at most 2 columns of at least 490px */
+	grid-template-columns: repeat(auto-fill, minmax(490px, 1fr));
+	grid-gap: 1rem;
+	width: 100%;
+}
+
+@media screen and (width <= 500px) {
+	.foldable {
+		grid-template-columns: 1fr;
+	}
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	
+	max-height: 25rem;
+	overflow-y: scroll;
+}
+
+.flexible {
+	display: flex;
+	flex-direction: column;
+}
+
+.growing {
+	flex-grow: 1;
+}
+
+.noverflow {
+	overflow: hidden;
+}
+
+.block-minimum-padded {
+	/* lines + heading + margin + padding */
+	min-height: calc(6lh + 2em + 2em + 2em);
+}
+
+noscript:has(> iframe) + .code-block {
+	display: none;
+}
+
+/*h1 {
+  margin-block: 0.67em;
+  font-size: 2em;
+}*/
+
+</style>
+
+<style>/*!
+  Theme: Gruvbox dark, hard
+  Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+  License: ~ MIT (or more permissive) [via base16-schemes-source]
+  Maintainer: @highlightjs/core-team
+  Version: 2021.09.0
+*/pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{color:#d5c4a1;background:#1d2021}.hljs ::selection,.hljs::selection{background-color:#504945;color:#d5c4a1}.hljs-comment{color:#665c54}.hljs-tag{color:#bdae93}.hljs-operator,.hljs-punctuation,.hljs-subst{color:#d5c4a1}.hljs-operator{opacity:.7}.hljs-bullet,.hljs-deletion,.hljs-name,.hljs-selector-tag,.hljs-template-variable,.hljs-variable{color:#fb4934}.hljs-attr,.hljs-link,.hljs-literal,.hljs-number,.hljs-symbol,.hljs-variable.constant_{color:#fe8019}.hljs-class .hljs-title,.hljs-title,.hljs-title.class_{color:#fabd2f}.hljs-strong{font-weight:700;color:#fabd2f}.hljs-addition,.hljs-code,.hljs-string,.hljs-title.class_.inherited__{color:#b8bb26}.hljs-built_in,.hljs-doctag,.hljs-keyword.hljs-atrule,.hljs-quote,.hljs-regexp{color:#8ec07c}.hljs-attribute,.hljs-function .hljs-title,.hljs-section,.hljs-title.function_,.ruby .hljs-property{color:#83a598}.diff .hljs-meta,.hljs-keyword,.hljs-template-tag,.hljs-type{color:#d3869b}.hljs-emphasis{color:#d3869b;font-style:italic}.hljs-meta,.hljs-meta .hljs-keyword,.hljs-meta .hljs-string{color:#d65d0e}.hljs-meta .hljs-keyword,.hljs-meta-keyword{font-weight:700}</style>
+
+
+<script type="module">
+import hljs from './libs/highlight.js/11.9.0/es/highlight.min.js';
+const code = document.getElementById("now-playing");
+
+addEventListener("load", async () => {
+	const API_URL = "https://api.listenbrainz.org/1/user/ilari/playing-now";
+	const response = await fetch(API_URL);
+	const json = await response.json();	
+	
+	code.textContent = JSON.stringify(json, ["payload", "listens", "playing_now", "track_metadata", "artist_name", "release_name", "track_name"], "  ");
+
+	code.removeAttribute("data-highlighted");
+	setTimeout(() => hljs.highlightElement(code), 0);
+});
+</script>
+
+<script type="module">
+import hljs from './libs/highlight.js/11.9.0/es/highlight.min.js';
+const code = document.getElementById("now-coding");
+
+addEventListener("load", async () => {
+	const API_URL = "https://api.testaustime.fi/users/bluelhf/activity/current";
+	const response = await fetch(API_URL);
+	const json = await response.json();
+	
+	code.textContent = JSON.stringify(json, null, "  ");
+
+	code.removeAttribute("data-highlighted");
+	setTimeout(() => hljs.highlightElement(code), 0);
+});
+</script>
+
+<body>
+	<main>
+		<div class="logo-container">
+			<img loading="lazy"
+			sizes="auto, 678px"	srcset="
+			assets/hello_kitty_onesie/w_100.webp 100w,
+			assets/hello_kitty_onesie/w_333.webp 333w,
+			assets/hello_kitty_onesie/w_491.webp 491w,
+			assets/hello_kitty_onesie/w_560.webp 560w,
+			assets/hello_kitty_onesie/w_621.webp 621w,
+			assets/hello_kitty_onesie/w_678.webp 678w"
+			src="assets/hello_kitty_onesie.webp"
+			class="logo" alt="Me in a hello kitty -onesie">
+		</div>
+		<h1>Hi, I'm Ilari :)</h1>
+		<p>
+			I've found often times people's biographies define them by their actions. Values are more important.
+			My core values are love, resilience, beauty, kindness, and wisdom. Do it right or do it again.
+		</p>
+		<div class="foldable">
+			<div class="column noverflow block-minimum-padded">
+				<h2>Listening now</h2>
+				<noscript class="noscript-frame noverflow flexible growing code-block">
+					<iframe src="https://api.listenbrainz.org/1/user/ilari/playing-now"></iframe>
+				</noscript>
+				<pre class="noverflow flexible growing code-block">
+					<code id="now-playing" class="language-json hljs growing">Fetching information...</code>
+				</pre>
+			</div>
+			<div class="column noverflow block-minimum-padded">
+				<h2>Coding now</h2>
+				<noscript class="noscript-frame noverflow flexible growing code-block">
+					<iframe src="https://api.testaustime.fi/users/bluelhf/activity/current"></iframe>
+				</noscript>
+				<pre class="noverflow flexible growing code-block">
+					<code id="now-coding" class="language-json hljs growing">Fetching information...</code>
+				</pre>
+			</div>	
+		</div>
+		<noscript><p><small>JavaScript isn't available, so I've put <code>iframe</code> elements in place of the <code>highlight.js</code> blocks</p></small></noscript>
+		<div class="profile-container" title="i love my girlfriend :)">
+			<span>💞</span><img src="https://proxy-profile.ilari-suhonen.workers.dev/" class="profile" alt="My girlfriend's current profile picture">
+		</div>
+	</main>
+</body>
