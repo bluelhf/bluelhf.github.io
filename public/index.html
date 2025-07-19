@@ -168,7 +168,7 @@ addEventListener("load", async () => {
 	const response = await fetch(API_URL);
 	const json = await response.json();	
 	
-	code.textContent = JSON.stringify(json, ["payload", "listens", "playing_now", "track_metadata", "artist_name", "release_name", "track_name"], "  ");
+	code.textContent = JSON.stringify(json, ["payload", "listens", "track_metadata", "artist_name", "release_name", "track_name"], "  ");
 
 	code.removeAttribute("data-highlighted");
 	setTimeout(() => hljs.highlightElement(code), 0);
